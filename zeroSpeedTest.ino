@@ -17,9 +17,21 @@ static void syncDAC() {
 void loop(){
   int i = 0;
   int value = 0;
-  int wave = 0;
+  
     if(Serial.available() > 0){
       userInput = Serial.read();
+
+     if(userInput == 'b'){
+        while(1){
+          value = sinewave[i];              // Use lookup table
+          analogWrite(A0,value);            // Use built in analogwirte function
+          
+          i = i + 1;
+          if(i == 256){                     // Loop through lookup table & reset index at end
+            i = 0;
+          }
+        } 
+      } 
       
       if(userInput == 's'){
       
@@ -36,19 +48,6 @@ void loop(){
               i = 0;
             }                                
           }                                 
-          
       }                                     
-
-      if(userInput == 't'){
-        while(1){
-          value = sinewave[i];              // Use lookup table
-          analogWrite(A0,value);            // Use built in analogwirte function
-          
-          i = i + 1;
-          if(i == 256){                     // Loop through lookup table & reset index at end
-            i = 0;
-          }
-        } 
-      } 
     } 
 } 
