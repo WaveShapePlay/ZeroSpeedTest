@@ -1,5 +1,5 @@
 #ifndef sineLookup_h
-#define sineLookUp_h
+#define sineLookup_h
 
 uint8_t  sinewave[256] = {
   0x80, 0x83, 0x86, 0x89, 0x8C, 0x90, 0x93, 0x96,

@@ -1,4 +1,4 @@
-#include "sineLookUp.h"
+#include "sineLookup.h"
 
 char userInput;
 
