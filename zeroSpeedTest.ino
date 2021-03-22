@@ -4,7 +4,7 @@ char userInput;
 
 void setup()
 {
-  analogWriteResolution(10);                // Set DAC output resolution to 8 bits
+  analogWriteResolution(10);                // Set DAC output resolution to 10 bits
   Serial.begin(9600);                       // Initialize serial communication
 }
 
@@ -38,7 +38,7 @@ void loop(){
           while(1){
             value = sinewave[i];            // Use lookup table for sine wave values 
             syncDAC();
-            DAC->DATA.reg = value & 0x3FF;  // This is a mask for the 8 bit Data value for the DAC
+            DAC->DATA.reg = value & 0x3FF;  // This is a mask for the 10 bits of Data value for the DAC
             syncDAC();
             DAC->CTRLA.bit.ENABLE = 0x01;   // This enables the DAC output
             syncDAC();
