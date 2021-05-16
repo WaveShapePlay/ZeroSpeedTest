@@ -101,7 +101,7 @@ void loop(){
                 i = 0;
               }
            } // while True                                
-          } // if user '3' - synchDAC() after value is write to data register
+          } // if user '3' - synchDAC() after value is writen to data register
 
         if(userSpeedTestType == '4'){
             while(1){
