@@ -17,6 +17,8 @@ static void syncDAC() {
 char selectSpeedTest(){
   Serial.println("Which speed test would you like to run?");
   char userInputSpeed;
+  delay(1000);
+  
   while(1){
     if(Serial.available() > 0){
       userInputSpeed = Serial.read();
@@ -51,10 +53,8 @@ void loop(){
       
       if(userInput == 's'){
         char userSpeedTestType;
-        Serial.println("Getting userInput");
         userSpeedTestType = selectSpeedTest();
-        Serial.println("Got speedtest vaule");
-        Serial.println(userSpeedTestType);
+        
         if(userSpeedTestType == '1'){
             while(1){
               value = sinewave[i];            // Use lookup table for sine wave values 
